@@ -33,7 +33,7 @@ function Buzz(){
 function getParameters(){
     let args = process.argv.slice(2);
     let num_args = [];
-    for(let i=0; i<args.length; i++){
+    for(let i = 0; i < args.length; i++){
         num_args[i] = parseInt(args[i]);
     }
     return num_args;
@@ -44,39 +44,36 @@ rl.question('Input a number ', (answer) => {
 
     let num_args=getParameters();
 
-    for(let i=1; i<=n; i++){
-        let nr=1;
-        if(i%17 == 0){
-            if(i%13 == 0 && num_args.includes(13)){
+    for(let i = 1; i <= n; i++) {
+        let nr = 1;
+        if (i % 11 == 0 && num_args.includes(11)) {
+            nr = Bong();
+        }
+        else if (i % 17 == 0) {
+            if (i % 13 == 0 && num_args.includes(13)) {
                 nr = Fezz();
             }
-            if(i%11 == 0 && num_args.includes(11)){
-                nr = Bong();
-            }
-            if(i%7 == 0 && num_args.includes(7)){
+            if (i % 7 == 0 && num_args.includes(7)) {
                 nr = Bang();
             }
-            if(i%5 == 0 && num_args.includes(5)){
+            if (i % 5 == 0 && num_args.includes(5)) {
                 nr = Buzz();
             }
-            if(i%3 == 0 && num_args.includes(3)){
+            if (i % 3 == 0 && num_args.includes(3)) {
                 nr = Fizz();
             }
         }
-        else{
-            if(i%3 == 0 && num_args.includes(3)){
+        else {
+            if (i % 3 == 0 && num_args.includes(3)) {
                 nr = Fizz();
             }
-            if(i%5 == 0 && num_args.includes(5)){
+            if (i % 5 == 0 && num_args.includes(5)) {
                 nr = Buzz();
             }
-            if(i%7 == 0 && num_args.includes(7)){
+            if (i % 7 == 0 && num_args.includes(7)) {
                 nr = Bang();
             }
-            if(i%11 == 0 && num_args.includes(11)){
-                nr = Bong();
-            }
-            if(i%13 == 0 && num_args.includes(13)){
+            if (i % 13 == 0 && num_args.includes(13)) {
                 nr = Fezz();
             }
         }

@@ -59,15 +59,14 @@ function getParameters() {
 rl.question('Input a number ', (answer) => {
     let n = parseInt(answer);
     let num_args = getParameters();
-    console.log(num_args);
     for (let i = 1; i <= n; i++) {
         let nr = 1;
-        if (i % 17 == 0) {
+        if (i % 11 == 0 && num_args.includes(11)) {
+            nr = Bong();
+        }
+        else if (i % 17 == 0) {
             if (i % 13 == 0 && num_args.includes(13)) {
                 nr = Fezz();
-            }
-            if (i % 11 == 0 && num_args.includes(11)) {
-                nr = Bong();
             }
             if (i % 7 == 0 && num_args.includes(7)) {
                 nr = Bang();
@@ -88,9 +87,6 @@ rl.question('Input a number ', (answer) => {
             }
             if (i % 7 == 0 && num_args.includes(7)) {
                 nr = Bang();
-            }
-            if (i % 11 == 0 && num_args.includes(11)) {
-                nr = Bong();
             }
             if (i % 13 == 0 && num_args.includes(13)) {
                 nr = Fezz();
